@@ -8,6 +8,7 @@ Updated and tested for Sitecore 9.0.2 by Ruud van Falier, ParTech.
 * If you haven't used SIF before, make sure to follow the installation guide:  https://dev.sitecore.net/Downloads/Sitecore_Installation_Framework/1x/Sitecore_Installation_Framework_12.aspx  
 **Pay extra attention to the SIF prequisites!**
 * Read the README.md file from each of the `<example_name>/packages` folders and make sure the required Sitecore installation (`*.scwdp.zip`) packages are placed into those folders
+* Place your `license.xml` in the root of this repository
 
 ## Examples
 
