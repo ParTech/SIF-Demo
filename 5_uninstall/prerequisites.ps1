@@ -7,5 +7,5 @@ Function ModuleAbsent ($Name){
 Get-PackageProvider -Name Nuget -ForceBootstrap
 
 if(ModuleAbsent SqlServer){
-    Install-Module -Name SqlServer -Repository PSGallery -Force
+    Install-Module -Name SqlServer -Repository PSGallery -Force -AllowClobber
 }
