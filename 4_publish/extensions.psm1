@@ -48,6 +48,13 @@ Function Invoke-InstallPackageTask {
 	 
 	Write-TaskInfo "Url $webURI" -Tag 'PackageInstall'
 	
+	# Warmup
+	try {
+		$warmup = Invoke-WebRequest $webURI -TimeoutSec 600 -ErrorAction silentlycontinue
+		$warmup.Content | Out-Null
+	}
+	catch { Write-Host "Warmup returned error" }
+
 	#Do the install here
 	$proxy = New-WebServiceProxy -uri $webURI
 	$proxy.Timeout = 1800000

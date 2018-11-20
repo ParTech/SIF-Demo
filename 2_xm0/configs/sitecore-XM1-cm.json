@@ -306,7 +306,15 @@
                 "Source": "[resolvepath(parameter('LicenseFile'))]",
                 "Destination": "[variable('Site.DataFolder')]"
             }
-        },
+		},
+		"SetRole": {
+			"Type": "SetXml",
+			"Params": {
+			  "FilePath": "[joinpath(variable('Site.PhysicalPath'), 'Web.config')]",
+			  "XPath": "//configuration/appSettings/add[@key='role:define']",
+			  "Attributes": [{ "value": "Standalone" } ]
+			}
+		},
         "StartAppPool": {
             // Starts the app pool.
             "Type": "ManageAppPool",
